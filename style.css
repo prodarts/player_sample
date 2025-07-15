@@ -1,3 +1,4 @@
+
 /* 生成されたCSSコード - 金子颯太様向け 寒色系カラーリライト版 */
 :root {
   /* 新しいカラーパレット (青・紫系: クール/プロフェッショナル) */
@@ -44,7 +45,7 @@ header {
 
 /* PC版の背景画像とアタッチメント */
 header.pc-bg-image {
-  background-image: url('ogp.jpg');
+  background-image: url('ogp.jpg'); /* JSで指定するが念のため記載 */
   background-attachment: fixed; /* パララックス効果 */
 }
 
@@ -83,17 +84,17 @@ header::before {
 }
 
 
+/* ▼▼▼【ここを修正しました】▼▼▼ */
 /* プロフィール画像 */
 .profile-image-container {
   margin-bottom: 25px;
 }
 
-
 .profile-img {
   width: 100%;
   max-width: 380px;
-  aspect-ratio: 1; /* 正方形 */
-  border-radius: 50%; /* 丸形 */
+  aspect-ratio: 16 / 9; /* 横長の比率に変更 */
+  border-radius: 4px;   /* 丸形から角丸の四角形に変更 */
   object-fit: cover;
   border: 4px solid rgba(255, 255, 255, 0.7);
   box-shadow: 0 8px 30px rgba(0,0,0,0.2);
@@ -103,11 +104,12 @@ header::before {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-
 .profile-img:hover {
   transform: scale(1.05) translateY(-5px);
   box-shadow: 0 12px 40px rgba(0,0,0,0.25);
 }
+/* ▲▲▲【ここまで修正】▲▲▲ */
+
 
 .header-overlay-text {
   position: absolute;
@@ -275,7 +277,7 @@ footer { text-align: center; padding: 25px; margin-top: 50px; color: var(--highl
     background-attachment: scroll;
   }
   .profile-image-container {
-    display: none; /* モバイルではヘッダーの丸いアイコンは非表示 */
+    display: none; /* モバイルではヘッダーの画像は非表示 */
   }
   .header-overlay-text { font-size: 1.5rem; }
   .container { padding: 0 20px; }
